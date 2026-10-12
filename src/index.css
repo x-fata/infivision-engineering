@@ -1,0 +1,490 @@
+/* =========================================
+   INFIVISION ENGINEERING
+   GLOBAL DESIGN SYSTEM
+   Brand: Red | Black | White | Grey
+========================================= */
+
+:root {
+  /* Brand Colors */
+  --brand-red: #c8102e;
+  --brand-red-dark: #97051f;
+  --brand-red-light: #fff0f2;
+
+  --brand-black: #111214;
+  --brand-dark: #1c1e22;
+  --brand-grey: #666b73;
+  --brand-light-grey: #f4f5f7;
+  --brand-border: #e3e5e8;
+  --brand-white: #ffffff;
+
+  /* Semantic Colors */
+  --text-primary: #17191d;
+  --text-secondary: #626873;
+  --background: #ffffff;
+  --surface: #f7f8fa;
+
+  /* Layout */
+  --container-width: 1280px;
+  --header-height: 82px;
+
+  /* Spacing */
+  --section-space: 88px;
+  --card-radius: 14px;
+  --button-radius: 7px;
+
+  /* Effects */
+  --shadow-small:
+    0 4px 14px rgba(17, 18, 20, 0.06);
+
+  --shadow-medium:
+    0 12px 32px rgba(17, 18, 20, 0.10);
+
+  --shadow-large:
+    0 20px 50px rgba(17, 18, 20, 0.14);
+
+  /* Typography */
+  --font-main:
+    Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-main);
+  color: var(--text-primary);
+  background: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-optical-sizing: auto;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: var(--text-primary);
+  background: var(--background);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main);
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+p {
+  margin-top: 0;
+}
+
+::selection {
+  color: var(--brand-white);
+  background: var(--brand-red);
+}
+
+/* =========================================
+   APPLICATION ROOT
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================
+   REUSABLE LAYOUT
+========================================= */
+
+.container {
+  width: min(calc(100% - 48px),
+      var(--container-width));
+
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 38px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 14px;
+
+  color: var(--brand-red);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: "";
+  width: 32px;
+  height: 3px;
+
+  background: var(--brand-red);
+  border-radius: 4px;
+}
+
+.section-title {
+  margin-bottom: 18px;
+
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -1.2px;
+}
+
+.section-description {
+  max-width: 700px;
+  margin-bottom: 0;
+
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 12px 23px;
+
+  border: 1px solid transparent;
+  border-radius: var(--button-radius);
+
+  font-size: 14px;
+  font-weight: 750;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-primary {
+  color: var(--brand-white);
+  background: var(--brand-red);
+}
+
+.btn-primary:hover {
+  background: var(--brand-red-dark);
+  box-shadow: var(--shadow-small);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: var(--brand-white);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-outline:hover {
+  color: var(--brand-black);
+  background: var(--brand-white);
+}
+
+.btn-dark {
+  color: var(--brand-white);
+  background: var(--brand-black);
+}
+
+.btn-dark:hover {
+  background: var(--brand-red);
+}
+
+/* =========================================
+   IMAGE HANDLING
+========================================= */
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Circular company logo */
+
+.company-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 112px;
+  height: 112px;
+  padding: 5px;
+
+  flex-shrink: 0;
+  overflow: hidden;
+
+  background: var(--brand-white);
+  border: 3px solid var(--brand-red);
+  border-radius: 50%;
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* =========================================
+   SERVICE CARDS
+========================================= */
+
+.service-card {
+  overflow: hidden;
+
+  background: var(--brand-white);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--card-radius);
+
+  box-shadow: var(--shadow-small);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.service-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+
+.project-card {
+  overflow: hidden;
+
+  background: var(--brand-white);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--card-radius);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px 15px;
+
+  color: var(--text-primary);
+  background: var(--brand-white);
+
+  border: 1px solid var(--brand-border);
+  border-radius: 7px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--brand-red);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.10);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(200, 16, 46, 0.65);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-space: 68px;
+  }
+
+  .container {
+    width: min(calc(100% - 36px),
+        var(--container-width));
+  }
+
+  .company-logo {
+    width: 94px;
+    height: 94px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-space: 52px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .company-logo {
+    width: 78px;
+    height: 78px;
+    border-width: 2px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
